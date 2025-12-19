@@ -1,0 +1,66 @@
+# render.yaml - Render.com Blueprint configuration
+services:
+  # Backend API Service
+  - type: web
+    name: cumplimiento-backend
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: cd backend && npm install && npm run build
+    startCommand: cd backend && node dist/main
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: DB_TYPE
+        value: postgres
+      - key: DB_HOST
+        fromDatabase:
+          name: cumplimiento-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: cumplimiento-db
+          property: port
+      - key: DB_USERNAME
+        fromDatabase:
+          name: cumplimiento-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: cumplimiento-db
+          property: password
+      - key: DB_DATABASE
+        fromDatabase:
+          name: cumplimiento-db
+          property: database
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 24h
+      - key: CORS_ORIGIN
+        sync: false
+
+  # Frontend Static Site
+  - type: web
+    name: cumplimiento-frontend
+    env: static
+    region: oregon
+    plan: free
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: frontend/dist
+    routes:
+      - type: rewrite
+        source: /api/*
+        destination: https://cumplimiento-backend.onrender.com/*
+      - type: rewrite
+        source: /*
+        destination: /index.html
+
+databases:
+  - name: cumplimiento-db
+    databaseName: cumplimiento_normativo
+    plan: free
+    region: oregon
