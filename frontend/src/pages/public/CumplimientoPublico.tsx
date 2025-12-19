@@ -109,8 +109,8 @@ const CumplimientoPublico: React.FC = () => {
             </div>
 
             {/* Header */}
-            <header className="relative z-10 border-b border-slate-700/50 bg-slate-900/80 backdrop-blur-xl">
-                <div className="max-w-7xl mx-auto px-6 py-4">
+            <header className="relative z-10 border-b border-slate-700/50 bg-slate-900/90 backdrop-blur-xl sticky top-0">
+                <div className="w-full px-4 lg:px-8 py-3">
                     <div className="flex items-center justify-between">
                         {/* Logo & Brand */}
                         <div className="flex items-center gap-4">
@@ -150,10 +150,10 @@ const CumplimientoPublico: React.FC = () => {
             </header>
 
             {/* Main Content */}
-            <main className="relative z-10 max-w-7xl mx-auto px-6 py-8">
+            <main className="relative z-10 w-full px-4 lg:px-8 py-6">
                 {/* Stats Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                    <div className="group relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl rounded-2xl border border-slate-700/50 p-6 hover:border-teal-500/50 transition-all duration-300 overflow-hidden">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div className="group relative bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl rounded-xl border border-slate-700/50 p-5 hover:border-teal-500/50 transition-all duration-300 overflow-hidden hover:shadow-lg hover:shadow-teal-500/10">
                         <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                         <div className="relative">
                             <div className="flex items-center gap-3 mb-4">
@@ -170,7 +170,7 @@ const CumplimientoPublico: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="group relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl rounded-2xl border border-slate-700/50 p-6 hover:border-cyan-500/50 transition-all duration-300 overflow-hidden">
+                    <div className="group relative bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl rounded-xl border border-slate-700/50 p-5 hover:border-cyan-500/50 transition-all duration-300 overflow-hidden hover:shadow-lg hover:shadow-cyan-500/10">
                         <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                         <div className="relative">
                             <div className="flex items-center gap-3 mb-4">
@@ -187,7 +187,7 @@ const CumplimientoPublico: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="group relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl rounded-2xl border border-slate-700/50 p-6 hover:border-indigo-500/50 transition-all duration-300 overflow-hidden">
+                    <div className="group relative bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl rounded-xl border border-slate-700/50 p-5 hover:border-indigo-500/50 transition-all duration-300 overflow-hidden hover:shadow-lg hover:shadow-indigo-500/10">
                         <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                         <div className="relative">
                             <div className="flex items-center gap-3 mb-4">
@@ -212,7 +212,7 @@ const CumplimientoPublico: React.FC = () => {
                 </div>
 
                 {/* Compliance Evolution Chart */}
-                <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl rounded-2xl border border-slate-700/50 p-6 mb-8 shadow-2xl">
+                <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl rounded-xl border border-slate-700/50 p-5 mb-6 shadow-xl">
                     <div className="flex items-center justify-between mb-6">
                         <div>
                             <h2 className="text-xl font-bold text-white mb-1 flex items-center gap-3">
@@ -299,7 +299,7 @@ const CumplimientoPublico: React.FC = () => {
                 </div>
 
                 {/* Compliance by Segment Heatmap */}
-                <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl rounded-2xl border border-slate-700/50 p-6 shadow-2xl">
+                <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl rounded-xl border border-slate-700/50 p-5 shadow-xl">
                     <div className="flex items-center justify-between mb-6">
                         <div>
                             <h2 className="text-xl font-bold text-white mb-1 flex items-center gap-3">
