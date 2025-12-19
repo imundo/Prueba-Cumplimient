@@ -4,7 +4,6 @@ services:
   - type: web
     name: cumplimiento-backend
     runtime: node
-    plan: free
     buildCommand: cd backend && npm install && npm run build
     startCommand: cd backend && node dist/main
     healthCheckPath: /health
@@ -43,14 +42,16 @@ services:
         sync: false
 
   # Frontend Static Site
-  - type: static_site
+  - type: web
     name: cumplimiento-frontend
+    runtime: static
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: frontend/dist
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
     routes:
-      - type: rewrite
-        source: /api/*
-        destination: https://cumplimiento-backend.onrender.com/*
       - type: rewrite
         source: /*
         destination: /index.html
@@ -58,4 +59,3 @@ services:
 databases:
   - name: cumplimiento-db
     databaseName: cumplimiento_normativo
-    plan: free
